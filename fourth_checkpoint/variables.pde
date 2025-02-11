@@ -23,3 +23,20 @@ int mode;
 final int pattern1 = 0;
 final int pattern2 = 1;
 final int pattern3 = 2;
+// pattern 1 variables======================
+int maxRings = 100; // number of rings
+int circlesPerRing = 200; // circles per ring
+float radiusStep;
+color[]colGradient = {
+  color (133, 95, 236),
+  color (146, 94, 238),
+  color (159, 93, 239),
+  color (171, 92, 240),
+  color (183, 91, 240),
+  color (195, 90, 240),
+  color (207, 88, 240),
+  color (218, 86, 239),
+  color (229, 84, 238),
+  color (240, 82, 236),
+
+};

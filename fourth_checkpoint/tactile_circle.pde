@@ -32,4 +32,7 @@ void tactileCircle(int x, int y, int  r, int f){
    line(33,400,55,375);
    line(33,400,55,425);
    //right arrow
+   line(750,375,775,400);
+   line(775,400,725,400);
+   line(750,425,775,400);
 }
