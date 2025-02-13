@@ -5,5 +5,5 @@ void mouseReleased() {
     pattern2Clicks();
   } else if (mode == pattern3) {
     pattern3Clicks();
-  } 
+  }
 }

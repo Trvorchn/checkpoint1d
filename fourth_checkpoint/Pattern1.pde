@@ -1,25 +1,18 @@
+
 void pattern1 () {
+  frameRate(60);
 
-  background(black);
-
-
-  stroke(white);
-  strokeWeight(2);
-
-  float maxRadius = width;
-  radiusStep = maxRadius / maxRings;
-
-  circleSpiral();
+   background(0);
+  strokeWeight(1);
+  noFill();
+  stroke(255);
+  
+  circlespiral();
+  
+  angleOffset = angleOffset + 0.01; 
+  
 }
-
-
-
 void pattern1Clicks() {
-
-
-  //tactileCircle(50,400,75,white);
-  //tactileCircle(750,400,75,white);
-
 
   if (dist(50, 400, mouseX, mouseY)<38) {
     mode = pattern3;
@@ -30,24 +23,29 @@ void pattern1Clicks() {
 }
 
 
-void circleSpiral () {
-  float cx = width / 2;//center of screen
-  float cy = width / 2;
-
-  for (int ring = 1; ring <= maxRings; ring++) {
+void circlespiral() {
+  float cx = width / 2;
+  float cy = height / 2;
+  float maxRadius = width/2;
+  float radiusStep = maxRadius / 17;
+  int ring = 1;
+ 
+ 
+  while (ring <= 25) {
     float currentRadius = radiusStep * ring;
-    int numCircles = circlesPerRing; // increases circles as ring moves outward
+    int numCircles = 15 * ring;
+    int i = 0;
+    float colorFactor = map(ring, 1, 15, 0, 275);
 
-    for (int i = 0; i < numCircles; i++) {
 
-
-
-      float angle = map(i, 0, numCircles, 0, TWO_PI ); //maps index to angle space
-      float x = cx + currentRadius* sin(angle);
+    while (i < numCircles) {
+      float angle = map(i, 0, numCircles, 0, TWO_PI)+ angleOffset;
+      float x = cx + currentRadius * sin(angle);
       float y = cy + currentRadius * cos(angle);
-
-      fill(colGradient[int (random(5))]);
-      ellipse(x, y, 20, 20);
+       stroke(colorFactor, 0 - colorFactor, 200);
+      ellipse(x, y, 30, 30);
+      i++;
     }
+    ring++;
   }
 }
